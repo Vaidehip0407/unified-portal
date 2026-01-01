@@ -1,0 +1,262 @@
+{
+  "gas": [
+    {
+      "id": "torrent_gas",
+      "name": "Torrent Gas",
+      "type": "private",
+      "portal_url": "https://connect.torrentgas.com/",
+      "name_change_url": "https://connect.torrentgas.com/",
+      "address_change_url": "https://connect.torrentgas.com/",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": true,
+      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "email"]
+    },
+    {
+      "id": "adani_gas",
+      "name": "Adani Total Gas Ltd",
+      "type": "private",
+      "portal_url": "https://www.adanigas.com/",
+      "name_change_url": "https://www.adanigas.com/name-transfer",
+      "address_change_url": "https://www.adanigas.com/",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": true,
+      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "email"]
+    },
+    {
+      "id": "gujarat_gas",
+      "name": "Gujarat Gas Ltd",
+      "type": "government",
+      "portal_url": "https://www.gujaratgas.com/",
+      "name_change_url": "https://iconnect.gujaratgas.com/Portal/outer-service-request_template.aspx",
+      "address_change_url": "https://iconnect.gujaratgas.com/",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": true,
+      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "email"]
+    },
+    {
+      "id": "sabarmati_gas",
+      "name": "Sabarmati Gas",
+      "type": "government",
+      "portal_url": "https://www.sabarmatigas.in/",
+      "name_change_url": "https://www.sabarmatigas.in/",
+      "address_change_url": "https://www.sabarmatigas.in/",
+      "api_available": false,
+      "online_available": false,
+      "rpa_enabled": false,
+      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "email"]
+    },
+    {
+      "id": "irm_energy",
+      "name": "IRM Energy Ltd",
+      "type": "private",
+      "portal_url": "https://www.irmenergy.com/",
+      "name_change_url": "https://www.irmenergy.com/",
+      "address_change_url": "https://www.irmenergy.com/",
+      "api_available": false,
+      "online_available": false,
+      "rpa_enabled": false,
+      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "email"]
+    },
+    {
+      "id": "vadodara_gas",
+      "name": "Vadodara Gas Ltd",
+      "type": "private",
+      "portal_url": "https://www.vgl.co.in/",
+      "name_change_url": "https://www.vgl.co.in/",
+      "address_change_url": "https://www.vgl.co.in/",
+      "api_available": false,
+      "online_available": false,
+      "rpa_enabled": false,
+      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "email"]
+    }
+  ],
+  "electricity": [
+    {
+      "id": "torrent_power",
+      "name": "Torrent Power",
+      "type": "private",
+      "portal_url": "https://connect.torrentpower.com/",
+      "name_change_url": "https://connect.torrentpower.com/",
+      "address_change_url": "https://connect.torrentpower.com/",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": true,
+      "form_fields": ["service_number", "old_name", "new_name", "mobile", "email"]
+    },
+    {
+      "id": "pgvcl",
+      "name": "PGVCL",
+      "type": "government",
+      "portal_url": "https://www.pgvcl.com/",
+      "name_change_url": "https://portal.guvnl.in/login.php",
+      "address_change_url": "https://portal.guvnl.in/login.php",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": true,
+      "form_fields": ["service_number", "old_name", "new_name", "mobile", "email"]
+    },
+    {
+      "id": "ugvcl",
+      "name": "UGVCL",
+      "type": "government",
+      "portal_url": "https://www.ugvcl.com/",
+      "name_change_url": "https://portal.guvnl.in/login.php",
+      "address_change_url": "https://portal.guvnl.in/login.php",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": true,
+      "form_fields": ["service_number", "old_name", "new_name", "mobile", "email"]
+    },
+    {
+      "id": "mgvcl",
+      "name": "MGVCL",
+      "type": "government",
+      "portal_url": "https://www.mgvcl.com/",
+      "name_change_url": "https://portal.guvnl.in/login.php",
+      "address_change_url": "https://portal.guvnl.in/login.php",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": true,
+      "form_fields": ["service_number", "old_name", "new_name", "mobile", "email"]
+    },
+    {
+      "id": "dgvcl",
+      "name": "DGVCL",
+      "type": "government",
+      "portal_url": "https://www.dgvcl.com/",
+      "name_change_url": "https://portal.guvnl.in/login.php",
+      "address_change_url": "https://portal.guvnl.in/login.php",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": true,
+      "form_fields": ["service_number", "old_name", "new_name", "mobile", "email"]
+    }
+  ],
+  "water": [
+    {
+      "id": "amc",
+      "name": "AMC (Ahmedabad Municipal Corporation)",
+      "type": "government",
+      "portal_url": "https://ahmedabadcity.gov.in/",
+      "name_change_url": "https://ahmedabadcity.gov.in/",
+      "address_change_url": "https://ahmedabadcity.gov.in/",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": true,
+      "form_fields": ["connection_id", "old_name", "new_name", "mobile", "email", "ward"]
+    },
+    {
+      "id": "smc",
+      "name": "SMC (Surat Municipal Corporation)",
+      "type": "government",
+      "portal_url": "https://www.suratmunicipal.gov.in/",
+      "name_change_url": "https://www.suratmunicipal.gov.in/",
+      "address_change_url": "https://www.suratmunicipal.gov.in/",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": false,
+      "form_fields": ["connection_id", "old_name", "new_name", "mobile", "email", "ward"]
+    },
+    {
+      "id": "vmc",
+      "name": "VMC (Vadodara Municipal Corporation)",
+      "type": "government",
+      "portal_url": "https://vmc.gov.in/",
+      "name_change_url": "https://vmc.gov.in/",
+      "address_change_url": "https://vmc.gov.in/",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": false,
+      "form_fields": ["connection_id", "old_name", "new_name", "mobile", "email", "ward"]
+    },
+    {
+      "id": "rmc",
+      "name": "RMC (Rajkot Municipal Corporation)",
+      "type": "government",
+      "portal_url": "https://www.rmc.gov.in/",
+      "name_change_url": "https://www.rmc.gov.in/",
+      "address_change_url": "https://www.rmc.gov.in/",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": false,
+      "form_fields": ["connection_id", "old_name", "new_name", "mobile", "email", "ward"]
+    },
+    {
+      "id": "gwssb",
+      "name": "GWSSB (Gujarat Water Supply)",
+      "type": "government",
+      "portal_url": "https://gwssb.gujarat.gov.in/",
+      "name_change_url": "https://watersupply.gujarat.gov.in/forms",
+      "address_change_url": "https://watersupply.gujarat.gov.in/other-info",
+      "api_available": false,
+      "online_available": false,
+      "rpa_enabled": false,
+      "form_fields": ["connection_id", "old_name", "new_name", "mobile", "email"]
+    }
+  ],
+  "property": [
+    {
+      "id": "anyror",
+      "name": "AnyROR (Revenue Department)",
+      "type": "government",
+      "portal_url": "https://anyror.gujarat.gov.in/",
+      "name_change_url": "https://anyror.gujarat.gov.in/",
+      "address_change_url": "https://anyror.gujarat.gov.in/",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": true,
+      "form_fields": ["survey_number", "old_owner", "new_owner", "mobile", "email", "district", "taluka"]
+    },
+    {
+      "id": "enagar",
+      "name": "e-Nagar Portal",
+      "type": "government",
+      "portal_url": "https://enagar.gujarat.gov.in/",
+      "name_change_url": "https://enagar.gujarat.gov.in/",
+      "address_change_url": "https://enagar.gujarat.gov.in/",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": false,
+      "form_fields": ["property_id", "old_owner", "new_owner", "mobile", "email"]
+    },
+    {
+      "id": "edhara",
+      "name": "e-Dhara Centers",
+      "type": "government",
+      "portal_url": "https://edhara.gujarat.gov.in/",
+      "name_change_url": "https://edhara.gujarat.gov.in/",
+      "address_change_url": "https://edhara.gujarat.gov.in/",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": false,
+      "form_fields": ["survey_number", "old_owner", "new_owner", "mobile", "email"]
+    },
+    {
+      "id": "indiafilings",
+      "name": "IndiaFilings",
+      "type": "private",
+      "portal_url": "https://www.indiafilings.com/",
+      "name_change_url": "https://www.indiafilings.com/learn/gujarat-land-mutation/",
+      "address_change_url": "https://www.indiafilings.com/learn/gujarat-land-mutation/",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": false,
+      "form_fields": ["survey_number", "old_owner", "new_owner", "mobile", "email"]
+    },
+    {
+      "id": "ezylegal",
+      "name": "ezyLegal",
+      "type": "private",
+      "portal_url": "https://www.ezylegal.in/",
+      "name_change_url": "https://ezylegal.in/property",
+      "address_change_url": "https://ezylegal.in/property",
+      "api_available": false,
+      "online_available": true,
+      "rpa_enabled": false,
+      "form_fields": ["survey_number", "old_owner", "new_owner", "mobile", "email"]
+    }
+  ]
+}
