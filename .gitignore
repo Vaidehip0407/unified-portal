@@ -86,3 +86,11 @@ chrome-extension/*.pem
 # Temporary files
 *.tmp
 *.temp
+
+# Terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/*.tfvars
+terraform/gov-portal.pem
