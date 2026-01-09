@@ -14,21 +14,21 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Production stagex
+# Production stage with Nginx
 FROM nginx:alpine
 
-# Copy builtnginx
+# Copy built files to nginx
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-
-# Copy custom nginx confg
-nf
+# Copy custom nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port
+EXPOSE 80
 
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+    CMD wget --quiet --tries=1 --spider http://localhost:80 || exit 1
 
-# Health chk
-
-    CMD wget --quiet 
-
-ff;"]n o, "daemo "-g"nx","ngiinx
-CMD [# Run ng
+# Run nginx
+CMD ["nginx", "-g", "daemon off;"]
