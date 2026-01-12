@@ -89,7 +89,7 @@ const NameChangeForm = () => {
         timestamp: Date.now()
       }));
 
-      // Open official portal directly instead of RPA demo
+      // Open official portal directly with URL parameters (if supported)
       const portalUrls = {
         'dgvcl': 'https://portal.guvnl.in/login.php',
         'pgvcl': 'https://portal.guvnl.in/login.php',
@@ -100,11 +100,32 @@ const NameChangeForm = () => {
         'adani-gas': 'https://www.adanigas.com/name-transfer'
       };
 
-      const portalUrl = portalUrls[selectedSupplier.id] || selectedSupplier.portal_url;
+      let portalUrl = portalUrls[selectedSupplier.id] || selectedSupplier.portal_url;
+      
+      // Add mobile number as URL parameter for GUVNL portals
+      if (portalUrl && portalUrl.includes('portal.guvnl.in') && formData.mobile) {
+        portalUrl += `?mobile=${formData.mobile}&discom=${selectedSupplier.name}`;
+      }
       
       // Open portal in new tab
       if (portalUrl) {
-        window.open(portalUrl, '_blank');
+        const newWindow = window.open(portalUrl, '_blank');
+        
+        // Try to inject auto-fill script (may be blocked by CORS)
+        if (newWindow) {
+          setTimeout(() => {
+            try {
+              newWindow.postMessage({
+                type: 'AUTOFILL_DATA',
+                mobile: formData.mobile,
+                discom: selectedSupplier.name,
+                consumer_number: formData.consumer_number || formData.service_number
+              }, 'https://portal.guvnl.in');
+            } catch (e) {
+              console.log('Could not send data to portal (CORS)');
+            }
+          }, 1000);
+        }
       }
 
       // Go to success step
