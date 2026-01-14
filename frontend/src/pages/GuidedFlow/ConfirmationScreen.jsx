@@ -215,13 +215,45 @@ const ConfirmationScreen = ({
           
           {/* Auto-Fill Options */}
           <div className="mt-4 space-y-3">
+            {/* Bookmarklet Option - NO EXTENSION NEEDED */}
+            {formData && (
+              <div className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-400 rounded-xl">
+                <div className="flex items-start gap-3">
+                  <span className="text-3xl">⭐</span>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-yellow-800 mb-1">
+                      NEW! One-Click Auto-Fill (No Extension!)
+                    </h4>
+                    <p className="text-xs text-yellow-600 mb-2">
+                      Drag this button to your bookmarks bar, then click it on DGVCL portal:
+                    </p>
+                    <a
+                      href={`javascript:(function(){var m='${formData.mobile}';var d='${providerName}';var i=document.querySelector('input[placeholder*="Mobile"]');if(i){i.value=m;i.dispatchEvent(new Event('input',{bubbles:true}));}var s=document.querySelector('select');if(s){for(var j=0;j<s.options.length;j++){if(s.options[j].text.includes(d)){s.selectedIndex=j;s.dispatchEvent(new Event('change',{bubbles:true}));break;}}}alert('Filled: '+m+' / '+d);})();`}
+                      className="inline-block px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-all text-sm font-medium cursor-move"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        alert('Drag this button to your bookmarks bar! Then click it on DGVCL portal.');
+                      }}
+                    >
+                      📌 DGVCL Auto-Fill
+                    </a>
+                    <p className="text-xs text-yellow-500 mt-2">
+                      1. Drag button to bookmarks bar<br/>
+                      2. Open DGVCL portal<br/>
+                      3. Click bookmark → Auto-fill!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Chrome Extension Option */}
             <div className="p-4 bg-gradient-to-r from-purple-50 to-blue-50 border-2 border-purple-300 rounded-xl">
               <div className="flex items-start gap-3">
                 <span className="text-3xl">🚀</span>
                 <div className="flex-1">
                   <h4 className="font-bold text-purple-800 mb-1">
-                    Option 1: Chrome Extension (Recommended)
+                    Option 2: Chrome Extension (Recommended)
                   </h4>
                   <p className="text-xs text-purple-600 mb-2">
                     ✅ 100% automatic fill • ✅ No copy-paste • ✅ 5 min setup
@@ -240,41 +272,15 @@ const ConfirmationScreen = ({
               </div>
             </div>
 
-            {/* VNC Server Option */}
-            <div className="p-4 bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-300 rounded-xl">
-              <div className="flex items-start gap-3">
-                <span className="text-3xl">📺</span>
-                <div className="flex-1">
-                  <h4 className="font-bold text-green-800 mb-1">
-                    Option 2: Watch Bot Live (No Extension Needed)
-                  </h4>
-                  <p className="text-xs text-green-600 mb-2">
-                    ✅ See bot working • ✅ No installation • ✅ Works for everyone
-                  </p>
-                  <a
-                    href="http://98.93.30.22:6080/vnc.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all text-sm font-medium"
-                  >
-                    🎬 Watch Bot Live
-                  </a>
-                  <p className="text-xs text-green-500 mt-2">
-                    Opens in new tab • Password: dgvcl2024 • See bot fill form in real-time
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Manual Option (Current) */}
-            <div className="p-3 bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200 rounded-lg">
+            <div className="p-3 bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-lg">
               <div className="flex items-start gap-2">
                 <span className="text-xl">📋</span>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-orange-800 text-sm mb-1">
-                    Option 3: Manual Copy-Paste (Current Method)
+                  <h4 className="font-semibold text-gray-800 text-sm mb-1">
+                    Option 3: Manual Copy-Paste
                   </h4>
-                  <p className="text-xs text-orange-600">
+                  <p className="text-xs text-gray-600">
                     Use copy buttons above to fill manually
                   </p>
                 </div>
