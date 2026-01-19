@@ -42,10 +42,22 @@ class DGVCLNameChangeRPA:
         self.screenshots = []
         
     def setup_browser(self):
-        """Setup Chrome browser - headless for server"""
+        """Setup Chrome browser - VNC display or headless"""
+        import os
         options = Options()
         
-        if self.headless:
+        # Check if VNC display is available
+        display = os.environ.get('DISPLAY')
+        
+        if display and display == ':99':
+            # VNC mode - visible browser on virtual display
+            print(f"🖥️ VNC Mode: Using display {display}")
+            options.add_argument('--no-sandbox')
+            options.add_argument('--disable-dev-shm-usage')
+            # NOT headless - browser will be visible in VNC
+            self.headless = False
+        elif self.headless:
+            # Headless mode - no display
             options.add_argument('--headless')
             options.add_argument('--no-sandbox')
             options.add_argument('--disable-dev-shm-usage')
@@ -60,7 +72,11 @@ class DGVCLNameChangeRPA:
         self.driver = webdriver.Chrome(options=options)
         self.wait = WebDriverWait(self.driver, 30)
         
-        print("✅ Browser opened in headless mode")
+        if display and display == ':99':
+            print("✅ Browser opened in VNC mode (visible)")
+            print("🌐 View at: http://98.93.30.22:6080/vnc.html")
+        else:
+            print("✅ Browser opened in headless mode")
     
     def take_screenshot(self, name):
         """Take screenshot and save"""

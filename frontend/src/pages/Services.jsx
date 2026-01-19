@@ -125,13 +125,26 @@ const Services = () => {
               <div className="p-6 space-y-4">
                 <p className="text-gray-600 text-sm">{service.description}</p>
 
-                {/* Apply Button */}
-                <Link
-                  to={`/${service.id}`}
-                  className="w-full flex items-center justify-center gap-2 bg-primary-500 text-white py-2.5 rounded-lg font-medium hover:bg-primary-600 transition-colors"
-                >
-                  Apply Now <ArrowRight className="w-4 h-4" />
-                </Link>
+                {/* Service Options */}
+                <div className="space-y-2">
+                  {/* Name Change */}
+                  <Link
+                    to={`/${service.id}`}
+                    className="w-full flex items-center justify-center gap-2 bg-primary-500 text-white py-2.5 rounded-lg font-medium hover:bg-primary-600 transition-colors"
+                  >
+                    Name Change <ArrowRight className="w-4 h-4" />
+                  </Link>
+
+                  {/* New Connection (Only for Electricity) */}
+                  {service.id === 'electricity' && (
+                    <Link
+                      to="/new-connection"
+                      className="w-full flex items-center justify-center gap-2 bg-green-500 text-white py-2.5 rounded-lg font-medium hover:bg-green-600 transition-colors"
+                    >
+                      New Connection <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  )}
+                </div>
 
                 {/* Official Portals */}
                 <div className="border-t border-gray-200 pt-4">

@@ -10,6 +10,7 @@ import Services from './pages/Services';
 import Applications from './pages/Applications';
 import GuidedFlow from './pages/GuidedFlow';
 import NameChangeForm from './pages/NameChangeForm';
+import NewConnectionForm from './pages/NewConnectionForm';
 import RPADemo from './pages/RPADemo';
 import OfflineIndicator from './components/OfflineIndicator';
 import InstallPWA from './components/InstallPWA';
@@ -60,6 +61,7 @@ function App() {
             <Route path="gas" element={<NameChangeForm />} />
             <Route path="water" element={<NameChangeForm />} />
             <Route path="property" element={<NameChangeForm />} />
+            <Route path="new-connection" element={<NewConnectionForm />} />
             <Route path="rpa-demo" element={<RPADemo />} />
           </Route>
         </Routes>

@@ -134,9 +134,16 @@ export const suppliers = {
         areas: 'Surat, Navsari, Valsad, Bharuch',
         portal: 'https://www.dgvcl.com',
         nameChangeUrl: 'https://portal.guvnl.in/login.php',
+        newConnectionUrl: 'https://portal.guvnl.in/LTConsumerReg.php',
         hasOnlinePortal: true,
         offlineNote: 'Offline forms also available at DGVCL office',
-        fields: ['consumer_number', 'applicant_name', 'mobile', 'email', 'address']
+        fields: ['consumer_number', 'applicant_name', 'mobile', 'email', 'address'],
+        newConnectionFields: [
+          'consumer_type', 'category', 'area_type', 'connection_load',
+          'applicant_name', 'mobile', 'email', 
+          'address_line1', 'address_line2', 'district', 'taluka', 'pincode',
+          'nearest_consumer_no'
+        ]
       }
     ]
   },
