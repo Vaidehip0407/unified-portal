@@ -112,7 +112,7 @@ const NameChangeForm = () => {
         timestamp: Date.now()
       }));
 
-      // Open official portal directly with URL parameters (if supported)
+      // Option 1: Extension-based automation (current)
       const portalUrls = {
         'dgvcl': 'https://portal.guvnl.in/login.php',
         'pgvcl': 'https://portal.guvnl.in/login.php',
@@ -129,25 +129,84 @@ const NameChangeForm = () => {
       if (portalUrl && portalUrl.includes('portal.guvnl.in') && formData.mobile) {
         portalUrl += `?mobile=${formData.mobile}&discom=${selectedSupplier.name}`;
       }
-      
-      // Open portal in new tab
-      if (portalUrl) {
-        const newWindow = window.open(portalUrl, '_blank');
-        
-        // Try to inject auto-fill script (may be blocked by CORS)
-        if (newWindow) {
-          setTimeout(() => {
-            try {
-              newWindow.postMessage({
-                type: 'AUTOFILL_DATA',
-                mobile: formData.mobile,
-                discom: selectedSupplier.name,
-                consumer_number: formData.consumer_number || formData.service_number
-              }, 'https://portal.guvnl.in');
-            } catch (e) {
-              console.log('Could not send data to portal (CORS)');
-            }
-          }, 1000);
+
+      // Ask user for automation preference
+      const useRPA = window.confirm(
+        '🤖 Choose Automation Method:\n\n' +
+        'OK = RPA Bot (No extension needed, fully automatic)\n' +
+        'Cancel = Browser Extension (Manual captcha/OTP)\n\n' +
+        'RPA Bot will handle everything automatically on server.'
+      );
+
+      if (useRPA) {
+        // Option 2: RPA Bot automation (new)
+        try {
+          setStep(3); // Go to RPA processing step
+          setMessage('🤖 Starting RPA Bot automation...');
+          
+          const rpaResponse = await api.post('/rpa/start', {
+            provider: selectedSupplier.id,
+            application_type: 'name_change',
+            form_data: {
+              mobile: formData.mobile,
+              provider: selectedSupplier.name,
+              new_name: formData.new_name,
+              reason: formData.reason,
+              security_deposit_option: formData.security_deposit_option,
+              old_security_deposit: formData.old_security_deposit,
+              applicant_name: formData.applicant_name,
+              email: formData.email
+            },
+            user_id: user?.id
+          });
+
+          if (rpaResponse.data.success) {
+            // Connect to WebSocket for real-time updates
+            const ws = new WebSocket(`ws://localhost:8000/rpa/ws/${rpaResponse.data.session_id}`);
+            
+            ws.onmessage = (event) => {
+              const status = JSON.parse(event.data);
+              setMessage(`🤖 ${status.step}: ${status.message} (${status.progress}%)`);
+              
+              if (status.status === 'success') {
+                setStep(4);
+                setMessage('🎉 RPA automation completed successfully!');
+              } else if (status.status === 'error') {
+                setMessage(`❌ RPA automation failed: ${status.message}`);
+              }
+            };
+
+            ws.onerror = () => {
+              setMessage('⚠️ RPA connection lost. Check status manually.');
+            };
+          }
+        } catch (error) {
+          setMessage('❌ RPA Bot failed to start. Using extension method...');
+          // Fallback to extension method
+          if (portalUrl) {
+            window.open(portalUrl, '_blank');
+          }
+        }
+      } else {
+        // Option 1: Extension method (existing)
+        if (portalUrl) {
+          const newWindow = window.open(portalUrl, '_blank');
+          
+          // Try to inject auto-fill script (may be blocked by CORS)
+          if (newWindow) {
+            setTimeout(() => {
+              try {
+                newWindow.postMessage({
+                  type: 'AUTOFILL_DATA',
+                  mobile: formData.mobile,
+                  discom: selectedSupplier.name,
+                  consumer_number: formData.consumer_number || formData.service_number
+                }, 'https://portal.guvnl.in');
+              } catch (e) {
+                console.log('Could not send data to portal (CORS)');
+              }
+            }, 1000);
+          }
         }
       }
 
