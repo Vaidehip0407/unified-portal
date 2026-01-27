@@ -7,6 +7,7 @@
       "portal_url": "https://www.gujaratgas.com",
       "name_change_url": "https://iconnect.gujaratgas.com/Portal/outer-service-request_template.aspx",
       "address_change_url": "https://iconnect.gujaratgas.com/Portal/outer-service-request_template.aspx",
+      "offline_form_url": "https://iconnect.gujaratgas.com/Portal/Upload.ashx?EncQuery=RbfX54x4vIZzhOBRSRfWTZbXAG7f3AbEg0f7VkvFfGVZliNT3OTix7df9NjIu7AFUPL8Mhq17Uk8uDKp9EzcvQ%3D%3D",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": true,
@@ -14,117 +15,46 @@
       "direct_access": true,
       "automation_type": "direct_form",
       "form_type": "web_form",
-      "reality_check": "Direct service request opens without login (verified)",
-      "form_fields": [
-        {
-          "name": "consumer_number",
-          "label": "Consumer Number",
-          "label_hindi": "उपभोक्ता संख्या",
-          "label_gujarati": "ગ્રાહક નંબર",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter Gujarat Gas consumer number",
-          "validation": "^[A-Z0-9]{8,12}$",
-          "selenium_selector": "input[name='txtConsumerNo']"
-        },
-        {
-          "name": "service_type",
-          "label": "Service Type",
-          "label_hindi": "सेवा प्रकार",
-          "label_gujarati": "સેવા પ્રકાર",
-          "type": "select",
-          "required": true,
-          "options": [
-            {"value": "name_change", "label": "Name Change", "label_hindi": "नाम परिवर्तन", "label_gujarati": "નામ બદલાવ"},
-            {"value": "address_change", "label": "Address Change", "label_hindi": "पता परिवर्तन", "label_gujarati": "સરનામું બદલાવ"}
-          ],
-          "selenium_selector": "select[name='ddlServiceType']"
-        },
-        {
-          "name": "old_name",
-          "label": "Current Name (as per gas bill)",
-          "label_hindi": "वर्तमान नाम (गैस बिल के अनुसार)",
-          "label_gujarati": "વર્તમાન નામ (ગેસ બિલ મુજબ)",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter current name as per gas bill",
-          "ocr_field": "name",
-          "selenium_selector": "input[name='txtCurrentName']"
-        },
-        {
-          "name": "new_name",
-          "label": "New Name",
-          "label_hindi": "नया नाम",
-          "label_gujarati": "નવું નામ",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter new name",
-          "selenium_selector": "input[name='txtNewName']"
-        },
-        {
-          "name": "mobile",
-          "label": "Mobile Number",
-          "label_hindi": "मोबाइल नंबर",
-          "label_gujarati": "મોબાઇલ નંબર",
-          "type": "tel",
-          "required": true,
-          "placeholder": "Enter 10-digit mobile number",
-          "validation": "^[6-9][0-9]{9}$",
-          "selenium_selector": "input[name='txtMobile']"
-        },
-        {
-          "name": "email",
-          "label": "Email Address",
-          "label_hindi": "ईमेल पता",
-          "label_gujarati": "ઇમેઇલ સરનામું",
-          "type": "email",
-          "required": false,
-          "placeholder": "Enter email address",
-          "selenium_selector": "input[name='txtEmail']"
-        },
-        {
-          "name": "address",
-          "label": "Service Address",
-          "label_hindi": "सेवा पता",
-          "label_gujarati": "સેવા સરનામું",
-          "type": "textarea",
-          "required": true,
-          "placeholder": "Enter complete service address",
-          "ocr_field": "address",
-          "selenium_selector": "textarea[name='txtAddress']"
-        },
-        {
-          "name": "reason",
-          "label": "Reason for Name Change",
-          "label_hindi": "नाम परिवर्तन का कारण",
-          "label_gujarati": "નામ બદલવાનું કારણ",
-          "type": "select",
-          "required": true,
-          "options": [
-            {"value": "marriage", "label": "Marriage", "label_hindi": "विवाह", "label_gujarati": "લગ્ન"},
-            {"value": "divorce", "label": "Divorce", "label_hindi": "तलाक", "label_gujarati": "છૂટાછેડા"},
-            {"value": "legal", "label": "Legal Name Change", "label_hindi": "कानूनी नाम परिवर्तन", "label_gujarati": "કાનૂની નામ બદલાવ"},
-            {"value": "other", "label": "Other", "label_hindi": "अन्य", "label_gujarati": "અન્ય"}
-          ],
-          "selenium_selector": "select[name='ddlReason']"
-        },
-        {
-          "name": "city",
-          "label": "City",
-          "label_hindi": "शहर",
-          "label_gujarati": "શહેર",
-          "type": "select",
-          "required": true,
-          "options": [
-            {"value": "ahmedabad", "label": "Ahmedabad", "label_gujarati": "અમદાવાદ"},
-            {"value": "gandhinagar", "label": "Gandhinagar", "label_gujarati": "ગાંધીનગર"},
-            {"value": "surat", "label": "Surat", "label_gujarati": "સુરત"},
-            {"value": "vadodara", "label": "Vadodara", "label_gujarati": "વડોદરા"},
-            {"value": "rajkot", "label": "Rajkot", "label_gujarati": "રાજકોટ"}
-          ],
-          "selenium_selector": "select[name='ddlCity']"
-        }
-      ]
+      "name_change_facility": "Yes (via application form / customer service)",
+      "address_change_facility": "Yes (manual update via customer care)"
+    },
+    {
+      "id": "gspc",
+      "name": "GSPC Ltd",
+      "type": "government",
+      "portal_url": "https://www.gspcgroup.com",
+      "name_change_url": null,
+      "address_change_url": null,
+      "offline_form_url": null,
+      "api_available": false,
+      "online_available": false,
+      "rpa_enabled": false,
+      "login_required": false,
+      "direct_access": false,
+      "automation_type": "manual_only",
+      "form_type": "office_visit",
+      "name_change_facility": "Limited/Not separately available — merging into Gujarat Gas",
+      "address_change_facility": "Limited/Manual via customer support",
+      "note": "Retail phased out, contact GSPC office"
+    },
+    {
+      "id": "sabarmati-gas",
+      "name": "Sabarmati Gas",
+      "type": "government",
+      "portal_url": "https://www.sabarmatigas.in",
+      "name_change_url": null,
+      "address_change_url": null,
+      "offline_form_url": "https://www.sabarmatigas.in/",
+      "api_available": false,
+      "online_available": false,
+      "rpa_enabled": false,
+      "login_required": false,
+      "direct_access": false,
+      "automation_type": "manual_only",
+      "form_type": "office_visit",
+      "name_change_facility": "Manual/Offline (contact centre)",
+      "address_change_facility": "Manual/Offline",
+      "note": "Visit local Sabarmati office"
     },
     {
       "id": "adani-gas",
@@ -132,68 +62,17 @@
       "type": "private",
       "portal_url": "https://www.adanigas.com",
       "name_change_url": "https://www.adanigas.com/name-transfer",
-      "address_change_url": "https://www.adanigas.com/name-transfer",
+      "address_change_url": "https://www.adanigas.com",
+      "offline_form_url": "https://www.adanigas.com",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": true,
-      "login_required": false,
-      "direct_access": true,
-      "automation_type": "direct_form",
-      "form_type": "web_form",
-      "reality_check": "Direct name transfer form opens without login",
-      "form_fields": [
-        {
-          "name": "consumer_number",
-          "label": "Consumer Number",
-          "label_hindi": "उपभोक्ता संख्या",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter Adani Gas consumer number",
-          "validation": "^[A-Z0-9]{8,12}$"
-        },
-        {
-          "name": "bp_number",
-          "label": "BP Number",
-          "label_hindi": "बीपी नंबर",
-          "type": "text",
-          "required": false,
-          "placeholder": "Enter BP number if available"
-        },
-        {
-          "name": "old_name",
-          "label": "Current Name (as per bill)",
-          "label_hindi": "वर्तमान नाम",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter current name as per gas bill",
-          "ocr_field": "name"
-        },
-        {
-          "name": "new_name",
-          "label": "New Name",
-          "label_hindi": "नया नाम",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter new name"
-        },
-        {
-          "name": "mobile",
-          "label": "Mobile Number",
-          "label_hindi": "मोबाइल नंबर",
-          "type": "tel",
-          "required": true,
-          "placeholder": "Enter 10-digit mobile number",
-          "validation": "^[6-9][0-9]{9}$"
-        },
-        {
-          "name": "email",
-          "label": "Email Address",
-          "label_hindi": "ईमेल पता",
-          "type": "email",
-          "required": false,
-          "placeholder": "Enter email address"
-        }
-      ]
+      "login_required": true,
+      "direct_access": false,
+      "automation_type": "login_assisted",
+      "form_type": "customer_portal",
+      "name_change_facility": "Yes (online name transfer available)",
+      "address_change_facility": "Yes (customer self-service on portal)"
     },
     {
       "id": "torrent-gas",
@@ -201,440 +80,145 @@
       "type": "private",
       "portal_url": "https://connect.torrentgas.com",
       "name_change_url": "https://www.torrentgas.com",
-      "address_change_url": "https://www.torrentgas.com",
+      "address_change_url": "https://connect.torrentgas.com",
+      "offline_form_url": "https://connect.torrentgas.com/attachments/static_content/download_page/Name_Transfer_Application_form_all_Locations_domestic.pdf",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": true,
       "login_required": false,
       "direct_access": true,
-      "automation_type": "direct",
-      "form_fields": [
-        {
-          "name": "consumer_number",
-          "label": "Consumer Number",
-          "label_hindi": "उपभोक्ता संख्या",
-          "label_gujarati": "ગ્રાહક નંબર",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter Torrent Gas consumer number",
-          "validation": "^[A-Z0-9]{8,12}$",
-          "selenium_selector": "input[name='consumer_number']"
-        },
-        {
-          "name": "old_name",
-          "label": "Current Name (as per gas bill)",
-          "label_hindi": "वर्तमान नाम (गैस बिल के अनुसार)",
-          "label_gujarati": "વર્તમાન નામ (ગેસ બિલ મુજબ)",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter current name as per gas bill",
-          "ocr_field": "name",
-          "selenium_selector": "input[name='old_name']"
-        },
-        {
-          "name": "new_name",
-          "label": "New Name",
-          "label_hindi": "नया नाम",
-          "label_gujarati": "નવું નામ",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter new name",
-          "selenium_selector": "input[name='new_name']"
-        },
-        {
-          "name": "mobile",
-          "label": "Mobile Number",
-          "label_hindi": "मोबाइल नंबर",
-          "label_gujarati": "મોબાઇલ નંબર",
-          "type": "tel",
-          "required": true,
-          "placeholder": "Enter 10-digit mobile number",
-          "validation": "^[6-9][0-9]{9}$",
-          "selenium_selector": "input[name='mobile']"
-        },
-        {
-          "name": "address",
-          "label": "Address",
-          "label_hindi": "पता",
-          "label_gujarati": "સરનામું",
-          "type": "textarea",
-          "required": true,
-          "placeholder": "Enter complete address",
-          "ocr_field": "address",
-          "selenium_selector": "textarea[name='address']"
-        }
-      ]
-    },
-    {
-      "id": "sabarmati-gas",
-      "name": "Sabarmati Gas",
-      "type": "government",
-      "portal_url": "https://www.sabarmatigas.in",
-      "name_change_url": "https://www.sabarmatigas.in",
-      "address_change_url": "https://www.sabarmatigas.in",
-      "api_available": false,
-      "online_available": true,
-      "rpa_enabled": false,
-      "form_fields": ["consumer_number", "old_name", "new_name", "mobile"]
+      "automation_type": "direct_form",
+      "form_type": "web_form",
+      "name_change_facility": "Yes (application form available)",
+      "address_change_facility": "Yes (via customer service)"
     },
     {
       "id": "vadodara-gas",
       "name": "Vadodara Gas Ltd",
       "type": "private",
       "portal_url": "https://www.vgl.co.in",
-      "name_change_url": "https://www.vgl.co.in/customer-services",
-      "address_change_url": "https://www.vgl.co.in/customer-services",
+      "name_change_url": null,
+      "address_change_url": null,
+      "offline_form_url": "https://www.vgl.co.in/sdm_downloads/affidavit-for-family-member-2-2/",
       "api_available": false,
-      "online_available": true,
-      "rpa_enabled": true,
+      "online_available": false,
+      "rpa_enabled": false,
       "login_required": false,
-      "direct_access": true,
-      "automation_type": "direct",
-      "form_fields": [
-        {
-          "name": "consumer_number",
-          "label": "Consumer Number",
-          "label_hindi": "उपभोक्ता संख्या",
-          "label_gujarati": "ગ્રાહક નંબર",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter Vadodara Gas consumer number",
-          "validation": "^[A-Z0-9]{8,12}$",
-          "selenium_selector": "input[name='consumer_number']"
-        },
-        {
-          "name": "old_name",
-          "label": "Current Name (as per gas bill)",
-          "label_hindi": "वर्तमान नाम (गैस बिल के अनुसार)",
-          "label_gujarati": "વર્તમાન નામ (ગેસ બિલ મુજબ)",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter current name as per gas bill",
-          "ocr_field": "name",
-          "selenium_selector": "input[name='current_name']"
-        },
-        {
-          "name": "new_name",
-          "label": "New Name",
-          "label_hindi": "नया नाम",
-          "label_gujarati": "નવું નામ",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter new name",
-          "selenium_selector": "input[name='new_name']"
-        },
-        {
-          "name": "mobile",
-          "label": "Mobile Number",
-          "label_hindi": "मोबाइल नंबर",
-          "label_gujarati": "મોબાઇલ નંબર",
-          "type": "tel",
-          "required": true,
-          "placeholder": "Enter 10-digit mobile number",
-          "validation": "^[6-9][0-9]{9}$",
-          "selenium_selector": "input[name='mobile']"
-        },
-        {
-          "name": "email",
-          "label": "Email Address",
-          "label_hindi": "ईमेल पता",
-          "label_gujarati": "ઇમેઇલ સરનામું",
-          "type": "email",
-          "required": false,
-          "placeholder": "Enter email address",
-          "selenium_selector": "input[name='email']"
-        },
-        {
-          "name": "address",
-          "label": "Address",
-          "label_hindi": "पता",
-          "label_gujarati": "સરનામું",
-          "type": "textarea",
-          "required": true,
-          "placeholder": "Enter complete address",
-          "ocr_field": "address",
-          "selenium_selector": "textarea[name='address']"
-        }
-      ]
+      "direct_access": false,
+      "automation_type": "manual_only",
+      "form_type": "office_visit",
+      "name_change_facility": "Yes (name transfer processed manually via office)",
+      "address_change_facility": "Yes (via office/agent)"
     },
     {
       "id": "irm-energy",
       "name": "IRM Energy Ltd",
       "type": "private",
       "portal_url": "https://www.irmenergy.com",
-      "name_change_url": "https://www.irmenergy.com",
-      "address_change_url": "https://www.irmenergy.com",
+      "name_change_url": null,
+      "address_change_url": null,
+      "offline_form_url": "https://www.irmenergy.com/",
       "api_available": false,
-      "online_available": true,
+      "online_available": false,
       "rpa_enabled": false,
-      "form_fields": ["consumer_number", "old_name", "new_name", "mobile"]
+      "login_required": false,
+      "direct_access": false,
+      "automation_type": "manual_only",
+      "form_type": "customer_service",
+      "name_change_facility": "Likely Yes (customer service)",
+      "address_change_facility": "Likely Yes (customer service)"
     }
   ],
   "electricity": [
     {
       "id": "pgvcl",
-      "name": "PGVCL (Paschim Gujarat Vij Company Ltd)",
+      "name": "Paschim Gujarat Vij Company Ltd (PGVCL)",
       "type": "government",
       "portal_url": "https://www.pgvcl.com",
       "name_change_url": "https://portal.guvnl.in/login.php",
       "address_change_url": "https://portal.guvnl.in/login.php",
+      "offline_form_url": "PGVCL office",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": true,
       "login_required": true,
       "direct_access": false,
-      "automation_type": "login_required",
+      "automation_type": "login_assisted",
       "form_type": "guvnl_portal",
-      "reality_check": "Login required (GUVNL common portal)",
-      "form_fields": [
-        {
-          "name": "consumer_number",
-          "label": "Consumer Number",
-          "label_hindi": "उपभोक्ता संख्या",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter your consumer number",
-          "validation": "^[0-9]{10,12}$"
-        },
-        {
-          "name": "old_name",
-          "label": "Current Name (as per bill)",
-          "label_hindi": "वर्तमान नाम",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter current name",
-          "ocr_field": "name"
-        },
-        {
-          "name": "new_name",
-          "label": "New Name",
-          "label_hindi": "नया नाम",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter new name"
-        },
-        {
-          "name": "mobile",
-          "label": "Mobile Number",
-          "label_hindi": "मोबाइल नंबर",
-          "type": "tel",
-          "required": true,
-          "placeholder": "Enter 10-digit mobile number",
-          "validation": "^[6-9][0-9]{9}$"
-        },
-        {
-          "name": "email",
-          "label": "Email Address",
-          "label_hindi": "ईमेल पता",
-          "type": "email",
-          "required": false,
-          "placeholder": "Enter email address"
-        },
-        {
-          "name": "address",
-          "label": "Address",
-          "label_hindi": "पता",
-          "type": "textarea",
-          "required": true,
-          "placeholder": "Enter complete address",
-          "ocr_field": "address"
-        },
-        {
-          "name": "aadhar_number",
-          "label": "Aadhar Number",
-          "label_hindi": "आधार नंबर",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter 12-digit Aadhar number",
-          "validation": "^[0-9]{12}$",
-          "ocr_field": "aadhar"
-        }
-      ]
+      "name_change_facility": "Yes (online request + document verification)",
+      "address_change_facility": "Yes (online request, field verification required)"
     },
     {
       "id": "ugvcl",
-      "name": "UGVCL (Uttar Gujarat Vij Company Ltd)",
+      "name": "Uttar Gujarat Vij Company Ltd (UGVCL)",
       "type": "government",
       "portal_url": "https://www.ugvcl.com",
       "name_change_url": "https://portal.guvnl.in/login.php",
       "address_change_url": "https://portal.guvnl.in/login.php",
+      "offline_form_url": "UGVCL office",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": true,
       "login_required": true,
       "direct_access": false,
-      "automation_type": "login_required",
+      "automation_type": "login_assisted",
       "form_type": "guvnl_portal",
-      "reality_check": "Login required (GUVNL common portal)",
-      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "email"]
+      "name_change_facility": "Yes (application via portal)",
+      "address_change_facility": "Yes (mostly offline verification)"
     },
     {
       "id": "mgvcl",
-      "name": "MGVCL (Madhya Gujarat Vij Company Ltd)",
+      "name": "Madhya Gujarat Vij Company Ltd (MGVCL)",
       "type": "government",
       "portal_url": "https://www.mgvcl.com",
       "name_change_url": "https://portal.guvnl.in/login.php",
       "address_change_url": "https://portal.guvnl.in/login.php",
+      "offline_form_url": "MGVCL office",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": true,
       "login_required": true,
       "direct_access": false,
-      "automation_type": "login_required",
+      "automation_type": "login_assisted",
       "form_type": "guvnl_portal",
-      "reality_check": "Login required (GUVNL common portal)",
-      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "email"]
+      "name_change_facility": "Yes (online initiation, manual approval)",
+      "address_change_facility": "Yes (online + site visit)"
     },
     {
       "id": "dgvcl",
-      "name": "DGVCL (Dakshin Gujarat Vij Company Ltd)",
+      "name": "Dakshin Gujarat Vij Company Ltd (DGVCL)",
       "type": "government",
       "portal_url": "https://www.dgvcl.com",
       "name_change_url": "https://portal.guvnl.in/login.php",
       "address_change_url": "https://portal.guvnl.in/login.php",
+      "offline_form_url": "DGVCL office",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": true,
       "login_required": true,
       "direct_access": false,
-      "automation_type": "login_required",
+      "automation_type": "login_assisted",
       "form_type": "guvnl_portal",
-      "reality_check": "Login required (GUVNL common portal)",
-      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "email"]
+      "name_change_facility": "Yes (consumer service request)",
+      "address_change_facility": "Yes (address correction supported)"
     },
     {
       "id": "torrent-power",
-      "name": "Torrent Power",
+      "name": "Torrent Power (Ahmedabad/Surat)",
       "type": "private",
       "portal_url": "https://www.torrentpower.com",
       "name_change_url": "https://connect.torrentpower.com",
       "address_change_url": "https://connect.torrentpower.com",
+      "offline_form_url": "https://www.torrentpower.com/public/pdf/investors/AHDAHDNameChangeLTENGForm2407191_20211129182958.pdf",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": true,
-      "login_required": false,
-      "direct_access": true,
-      "automation_type": "pdf_form",
-      "form_type": "pdf_download",
-      "reality_check": "PDF form without login (portal optional)",
-      "form_fields": [
-        {
-          "name": "consumer_number",
-          "label": "Consumer Number",
-          "label_hindi": "उपभोक्ता संख्या",
-          "label_gujarati": "ગ્રાહક નંબર",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter Torrent Power consumer number",
-          "validation": "^[A-Z0-9]{10,14}$",
-          "selenium_selector": "input[name='consumer_no']"
-        },
-        {
-          "name": "service_number",
-          "label": "Service Number",
-          "label_hindi": "सेवा संख्या",
-          "label_gujarati": "સેવા નંબર",
-          "type": "text",
-          "required": false,
-          "placeholder": "Enter service number if available",
-          "selenium_selector": "input[name='service_no']"
-        },
-        {
-          "name": "t_no",
-          "label": "T Number",
-          "label_hindi": "टी नंबर",
-          "label_gujarati": "ટી નંબર",
-          "type": "text",
-          "required": false,
-          "placeholder": "Enter T number if available",
-          "selenium_selector": "input[name='t_no']"
-        },
-        {
-          "name": "old_name",
-          "label": "Current Name (as per electricity bill)",
-          "label_hindi": "वर्तमान नाम (बिजली बिल के अनुसार)",
-          "label_gujarati": "વર્તમાન નામ (વીજળી બિલ મુજબ)",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter current name as per electricity bill",
-          "ocr_field": "name",
-          "selenium_selector": "input[name='current_name']"
-        },
-        {
-          "name": "new_name",
-          "label": "New Name",
-          "label_hindi": "नया नाम",
-          "label_gujarati": "નવું નામ",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter new name",
-          "selenium_selector": "input[name='new_name']"
-        },
-        {
-          "name": "mobile",
-          "label": "Mobile Number",
-          "label_hindi": "मोबाइल नंबर",
-          "label_gujarati": "મોબાઇલ નંબર",
-          "type": "tel",
-          "required": true,
-          "placeholder": "Enter 10-digit mobile number",
-          "validation": "^[6-9][0-9]{9}$",
-          "selenium_selector": "input[name='mobile']"
-        },
-        {
-          "name": "email",
-          "label": "Email Address",
-          "label_hindi": "ईमेल पता",
-          "label_gujarati": "ઇમેઇલ સરનામું",
-          "type": "email",
-          "required": false,
-          "placeholder": "Enter email address",
-          "selenium_selector": "input[name='email']"
-        },
-        {
-          "name": "address",
-          "label": "Service Address",
-          "label_hindi": "सेवा पता",
-          "label_gujarati": "સેવા સરનામું",
-          "type": "textarea",
-          "required": true,
-          "placeholder": "Enter complete service address",
-          "ocr_field": "address",
-          "selenium_selector": "textarea[name='address']"
-        },
-        {
-          "name": "city",
-          "label": "City",
-          "label_hindi": "शहर",
-          "label_gujarati": "શહેર",
-          "type": "select",
-          "required": true,
-          "options": [
-            {"value": "ahmedabad", "label": "Ahmedabad", "label_gujarati": "અમદાવાદ"},
-            {"value": "gandhinagar", "label": "Gandhinagar", "label_gujarati": "ગાંધીનગર"},
-            {"value": "surat", "label": "Surat", "label_gujarati": "સુરત"},
-            {"value": "bhiwandi", "label": "Bhiwandi", "label_gujarati": "ભિવંડી"},
-            {"value": "agra", "label": "Agra", "label_gujarati": "આગ્રા"}
-          ],
-          "selenium_selector": "select[name='city']"
-        },
-        {
-          "name": "reason",
-          "label": "Reason for Name Change",
-          "label_hindi": "नाम परिवर्तन का कारण",
-          "label_gujarati": "નામ બદલવાનું કારણ",
-          "type": "select",
-          "required": true,
-          "options": [
-            {"value": "marriage", "label": "Marriage", "label_hindi": "विवाह", "label_gujarati": "લગ્ન"},
-            {"value": "divorce", "label": "Divorce", "label_hindi": "तलाक", "label_gujarati": "છૂટાછેડા"},
-            {"value": "legal", "label": "Legal Name Change", "label_hindi": "कानूनी नाम परिवर्तन", "label_gujarati": "કાનૂની નામ બદલાવ"},
-            {"value": "death", "label": "Death of Family Member", "label_hindi": "परिवार के सदस्य की मृत्यु", "label_gujarati": "પરિવારના સભ્યનું મૃત્યુ"},
-            {"value": "other", "label": "Other", "label_hindi": "अन्य", "label_gujarati": "અન્ય"}
-          ],
-          "selenium_selector": "select[name='reason']"
-        }
-      ]
+      "login_required": true,
+      "direct_access": false,
+      "automation_type": "login_assisted",
+      "form_type": "customer_portal",
+      "name_change_facility": "Yes (online self-service / assisted)",
+      "address_change_facility": "Yes (online request)"
     }
   ],
   "water": [
@@ -642,312 +226,111 @@
       "id": "gwssb",
       "name": "Gujarat Water Supply (GWSSB)",
       "type": "government",
-      "portal_url": "https://watersupply.gujarat.gov.in",
-      "name_change_url": "https://watersupply.gujarat.gov.in/forms",
-      "address_change_url": "https://watersupply.gujarat.gov.in/forms",
+      "portal_url": "https://gwssb.gujarat.gov.in",
+      "name_change_url": null,
+      "address_change_url": null,
+      "offline_form_url": "https://watersupply.gujarat.gov.in/forms",
       "api_available": false,
-      "online_available": true,
-      "rpa_enabled": true,
+      "online_available": false,
+      "rpa_enabled": false,
       "login_required": false,
-      "direct_access": true,
-      "automation_type": "web_form",
-      "form_type": "forms_page",
-      "reality_check": "Forms page opens (no login)",
-      "form_fields": [
-        {
-          "name": "consumer_id",
-          "label": "Consumer ID / Connection Number",
-          "label_hindi": "उपभोक्ता आईडी / कनेक्शन संख्या",
-          "label_gujarati": "ગ્રાહક આઈડી / કનેક્શન નંબર",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter GWSSB consumer ID",
-          "validation": "^[A-Z0-9]{8,15}$",
-          "selenium_selector": "input[name='consumer_id']"
-        },
-        {
-          "name": "zone",
-          "label": "Zone / Division",
-          "label_hindi": "क्षेत्र / विभाग",
-          "label_gujarati": "ઝોન / વિભાગ",
-          "type": "select",
-          "required": true,
-          "options": [
-            {"value": "ahmedabad", "label": "Ahmedabad Zone", "label_gujarati": "અમદાવાદ ઝોન"},
-            {"value": "surat", "label": "Surat Zone", "label_gujarati": "સુરત ઝોન"},
-            {"value": "vadodara", "label": "Vadodara Zone", "label_gujarati": "વડોદરા ઝોન"},
-            {"value": "rajkot", "label": "Rajkot Zone", "label_gujarati": "રાજકોટ ઝોન"},
-            {"value": "bhavnagar", "label": "Bhavnagar Zone", "label_gujarati": "ભાવનગર ઝોન"},
-            {"value": "jamnagar", "label": "Jamnagar Zone", "label_gujarati": "જામનગર ઝોન"}
-          ],
-          "selenium_selector": "select[name='zone']"
-        },
-        {
-          "name": "old_name",
-          "label": "Current Name (as per water bill)",
-          "label_hindi": "वर्तमान नाम (पानी बिल के अनुसार)",
-          "label_gujarati": "વર્તમાન નામ (પાણી બિલ મુજબ)",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter current name as per water bill",
-          "ocr_field": "name",
-          "selenium_selector": "input[name='current_name']"
-        },
-        {
-          "name": "new_name",
-          "label": "New Name",
-          "label_hindi": "नया नाम",
-          "label_gujarati": "નવું નામ",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter new name",
-          "selenium_selector": "input[name='new_name']"
-        },
-        {
-          "name": "mobile",
-          "label": "Mobile Number",
-          "label_hindi": "मोबाइल नंबर",
-          "label_gujarati": "મોબાઇલ નંબર",
-          "type": "tel",
-          "required": true,
-          "placeholder": "Enter 10-digit mobile number",
-          "validation": "^[6-9][0-9]{9}$",
-          "selenium_selector": "input[name='mobile']"
-        },
-        {
-          "name": "email",
-          "label": "Email Address",
-          "label_hindi": "ईमेल पता",
-          "label_gujarati": "ઇમેઇલ સરનામું",
-          "type": "email",
-          "required": false,
-          "placeholder": "Enter email address",
-          "selenium_selector": "input[name='email']"
-        },
-        {
-          "name": "address",
-          "label": "Service Address",
-          "label_hindi": "सेवा पता",
-          "label_gujarati": "સેવા સરનામું",
-          "type": "textarea",
-          "required": true,
-          "placeholder": "Enter complete service address",
-          "ocr_field": "address",
-          "selenium_selector": "textarea[name='address']"
-        },
-        {
-          "name": "connection_type",
-          "label": "Connection Type",
-          "label_hindi": "कनेक्शन प्रकार",
-          "label_gujarati": "કનેક્શન પ્રકાર",
-          "type": "select",
-          "required": true,
-          "options": [
-            {"value": "domestic", "label": "Domestic", "label_hindi": "घरेलू", "label_gujarati": "ઘરેલું"},
-            {"value": "commercial", "label": "Commercial", "label_hindi": "व्यावसायिक", "label_gujarati": "વ્યાવસાયિક"},
-            {"value": "industrial", "label": "Industrial", "label_hindi": "औद्योगिक", "label_gujarati": "ઔદ્યોગિક"}
-          ],
-          "selenium_selector": "select[name='connection_type']"
-        },
-        {
-          "name": "reason",
-          "label": "Reason for Name Change",
-          "label_hindi": "नाम परिवर्तन का कारण",
-          "label_gujarati": "નામ બદલવાનું કારણ",
-          "type": "select",
-          "required": true,
-          "options": [
-            {"value": "marriage", "label": "Marriage", "label_hindi": "विवाह", "label_gujarati": "લગ્ન"},
-            {"value": "divorce", "label": "Divorce", "label_hindi": "तलाक", "label_gujarati": "છૂટાછેડા"},
-            {"value": "legal", "label": "Legal Name Change", "label_hindi": "कानूनी नाम परिवर्तन", "label_gujarati": "કાનૂની નામ બદલાવ"},
-            {"value": "death", "label": "Death of Family Member", "label_hindi": "परिवार के सदस्य की मृत्यु", "label_gujarati": "પરિવારના સભ્યનું મૃત્યુ"},
-            {"value": "other", "label": "Other", "label_hindi": "अन्य", "label_gujarati": "અન્ય"}
-          ],
-          "selenium_selector": "select[name='reason']"
-        }
-      ]
+      "direct_access": false,
+      "automation_type": "manual_only",
+      "form_type": "office_visit",
+      "name_change_facility": "Yes (application based, mostly offline)",
+      "address_change_facility": "Yes (manual verification required)"
     },
     {
-      "id": "amc",
+      "id": "amc-water",
       "name": "AMC (Ahmedabad Municipal Corporation)",
       "type": "government",
       "portal_url": "https://ahmedabadcity.gov.in",
-      "name_change_url": "https://ahmedabadcity.gov.in",
-      "address_change_url": "https://ahmedabadcity.gov.in",
+      "name_change_url": null,
+      "address_change_url": null,
+      "offline_form_url": "AMC office",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": false,
-      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "address"]
+      "login_required": true,
+      "direct_access": false,
+      "automation_type": "login_assisted",
+      "form_type": "municipal_portal",
+      "name_change_facility": "Yes (online request + document submission)",
+      "address_change_facility": "Yes (online request, ward-level verification)"
     },
     {
-      "id": "smc",
+      "id": "smc-water",
       "name": "SMC (Surat Municipal Corporation)",
       "type": "government",
       "portal_url": "https://www.suratmunicipal.gov.in",
-      "name_change_url": "https://www.suratmunicipal.gov.in",
-      "address_change_url": "https://www.suratmunicipal.gov.in",
+      "name_change_url": null,
+      "address_change_url": null,
+      "offline_form_url": "SMC office",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": false,
-      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "address"]
+      "login_required": true,
+      "direct_access": false,
+      "automation_type": "login_assisted",
+      "form_type": "municipal_portal",
+      "name_change_facility": "Yes (online initiation, manual approval)",
+      "address_change_facility": "Yes (mostly offline verification)"
     },
     {
-      "id": "vmc",
+      "id": "vmc-water",
       "name": "Vadodara Municipal Corporation (VMC)",
       "type": "government",
       "portal_url": "https://vmc.gov.in",
-      "name_change_url": "https://vmc.gov.in",
-      "address_change_url": "https://vmc.gov.in",
+      "name_change_url": null,
+      "address_change_url": null,
+      "offline_form_url": "VMC office",
       "api_available": false,
-      "online_available": true,
+      "online_available": false,
       "rpa_enabled": false,
-      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "address"]
+      "login_required": false,
+      "direct_access": false,
+      "automation_type": "manual_only",
+      "form_type": "office_visit",
+      "name_change_facility": "Yes (application based)",
+      "address_change_facility": "Yes (application based)"
     },
     {
-      "id": "rmc",
+      "id": "rmc-water",
       "name": "Rajkot Municipal Corporation (RMC)",
       "type": "government",
       "portal_url": "https://www.rmc.gov.in",
-      "name_change_url": "https://www.rmc.gov.in",
-      "address_change_url": "https://www.rmc.gov.in",
+      "name_change_url": null,
+      "address_change_url": null,
+      "offline_form_url": "RMC office",
       "api_available": false,
-      "online_available": true,
+      "online_available": false,
       "rpa_enabled": false,
-      "form_fields": ["consumer_number", "old_name", "new_name", "mobile", "address"]
+      "login_required": false,
+      "direct_access": false,
+      "automation_type": "manual_only",
+      "form_type": "office_visit",
+      "name_change_facility": "Yes (offline / assisted)",
+      "address_change_facility": "Yes (offline / assisted)"
     }
   ],
   "property": [
     {
       "id": "anyror",
-      "name": "AnyROR (Revenue Dept)",
+      "name": "AnyROR (Revenue Department)",
       "type": "government",
       "portal_url": "https://anyror.gujarat.gov.in",
       "name_change_url": "https://anyror.gujarat.gov.in",
-      "address_change_url": "https://revenuedepartment.gujarat.gov.in/e-dhara-forms",
+      "address_change_url": "https://anyror.gujarat.gov.in",
+      "offline_form_url": "https://revenuedepartment.gujarat.gov.in/e-dhara-forms",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": true,
       "login_required": false,
       "direct_access": true,
-      "automation_type": "direct",
-      "form_type": "record_view_only",
-      "mutation_required": true,
-      "form_fields": [
-        {
-          "name": "district",
-          "label": "District",
-          "label_hindi": "जिला",
-          "label_gujarati": "જિલ્લો",
-          "type": "select",
-          "required": true,
-          "options": [
-            {"value": "ahmedabad", "label": "Ahmedabad", "label_gujarati": "અમદાવાદ"},
-            {"value": "surat", "label": "Surat", "label_gujarati": "સુરત"},
-            {"value": "vadodara", "label": "Vadodara", "label_gujarati": "વડોદરા"},
-            {"value": "rajkot", "label": "Rajkot", "label_gujarati": "રાજકોટ"},
-            {"value": "bhavnagar", "label": "Bhavnagar", "label_gujarati": "ભાવનગર"},
-            {"value": "jamnagar", "label": "Jamnagar", "label_gujarati": "જામનગર"},
-            {"value": "gandhinagar", "label": "Gandhinagar", "label_gujarati": "ગાંધીનગર"},
-            {"value": "anand", "label": "Anand", "label_gujarati": "આણંદ"}
-          ],
-          "selenium_selector": "select[name='district']"
-        },
-        {
-          "name": "taluka",
-          "label": "Taluka",
-          "label_hindi": "तालुका",
-          "label_gujarati": "તાલુકો",
-          "type": "select",
-          "required": true,
-          "depends_on": "district",
-          "selenium_selector": "select[name='taluka']"
-        },
-        {
-          "name": "village",
-          "label": "Village",
-          "label_hindi": "गांव",
-          "label_gujarati": "ગામ",
-          "type": "select",
-          "required": true,
-          "depends_on": "taluka",
-          "selenium_selector": "select[name='village']"
-        },
-        {
-          "name": "survey_number",
-          "label": "Survey Number",
-          "label_hindi": "सर्वे संख्या",
-          "label_gujarati": "સર્વે નંબર",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter survey number",
-          "validation": "^[0-9/]+$",
-          "selenium_selector": "input[name='survey_no']"
-        },
-        {
-          "name": "subdivision_number",
-          "label": "Sub-division Number",
-          "label_hindi": "उप-विभाग संख्या",
-          "label_gujarati": "પેટા વિભાગ નંબર",
-          "type": "text",
-          "required": false,
-          "placeholder": "Enter sub-division number if applicable",
-          "selenium_selector": "input[name='subdiv_no']"
-        },
-        {
-          "name": "old_name",
-          "label": "Current Owner Name (as per 7/12)",
-          "label_hindi": "वर्तमान मालिक का नाम (7/12 के अनुसार)",
-          "label_gujarati": "વર્તમાન માલિકનું નામ (7/12 મુજબ)",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter current owner name as per 7/12",
-          "ocr_field": "name",
-          "selenium_selector": "input[name='current_owner']"
-        },
-        {
-          "name": "new_name",
-          "label": "New Owner Name",
-          "label_hindi": "नया मालिक नाम",
-          "label_gujarati": "નવા માલિકનું નામ",
-          "type": "text",
-          "required": true,
-          "placeholder": "Enter new owner name",
-          "selenium_selector": "input[name='new_owner']"
-        },
-        {
-          "name": "mobile",
-          "label": "Mobile Number",
-          "label_hindi": "मोबाइल नंबर",
-          "label_gujarati": "મોબાઇલ નંબર",
-          "type": "tel",
-          "required": true,
-          "placeholder": "Enter 10-digit mobile number",
-          "validation": "^[6-9][0-9]{9}$",
-          "selenium_selector": "input[name='mobile']"
-        },
-        {
-          "name": "mutation_reason",
-          "label": "Reason for Mutation",
-          "label_hindi": "म्यूटेशन का कारण",
-          "label_gujarati": "મ્યુટેશનનું કારણ",
-          "type": "select",
-          "required": true,
-          "options": [
-            {"value": "sale", "label": "Sale/Purchase", "label_hindi": "बिक्री/खरीद", "label_gujarati": "વેચાણ/ખરીદી"},
-            {"value": "inheritance", "label": "Inheritance", "label_hindi": "विरासत", "label_gujarati": "વારસો"},
-            {"value": "gift", "label": "Gift", "label_hindi": "उपहार", "label_gujarati": "ભેટ"},
-            {"value": "partition", "label": "Partition", "label_hindi": "विभाजन", "label_gujarati": "વિભાજન"},
-            {"value": "court_order", "label": "Court Order", "label_hindi": "न्यायालय आदेश", "label_gujarati": "કોર્ટ ઓર્ડર"}
-          ],
-          "selenium_selector": "select[name='mutation_reason']"
-        }
-      ],
-      "instructions": [
-        "AnyROR provides view-only access to land records",
-        "For name change/mutation, visit e-Dhara center or Talati office",
-        "Carry required documents for mutation process",
-        "Online record verification available 24/7"
-      ]
+      "automation_type": "direct_form",
+      "form_type": "web_form",
+      "name_change_facility": "Yes (online application, manual mutation approval required)",
+      "address_change_facility": "Limited (record correction only)"
     },
     {
       "id": "enagar",
@@ -956,58 +339,52 @@
       "portal_url": "https://enagar.gujarat.gov.in",
       "name_change_url": "https://enagar.gujarat.gov.in",
       "address_change_url": "https://enagar.gujarat.gov.in",
+      "offline_form_url": "https://revenuedepartment.gujarat.gov.in/e-dhara-forms",
       "api_available": false,
       "online_available": true,
-      "rpa_enabled": false,
-      "form_fields": ["property_id", "old_name", "new_name", "mobile", "address"]
+      "rpa_enabled": true,
+      "login_required": true,
+      "direct_access": false,
+      "automation_type": "login_assisted",
+      "form_type": "government_portal",
+      "name_change_facility": "Yes (property tax mutation request)",
+      "address_change_facility": "Yes (address correction via ULB)"
     },
     {
-      "id": "municipal-corp",
-      "name": "Municipal Corporations (AMC/RMC/VMC/SMC)",
+      "id": "municipal-property",
+      "name": "Municipal Corporations (AMC, RMC, VMC, SMC & other ULBs)",
       "type": "government",
       "portal_url": "https://urban.gujarat.gov.in",
       "name_change_url": "https://ahmedabadcity.gov.in",
-      "address_change_url": "https://enagar.gujarat.gov.in",
+      "address_change_url": "https://ahmedabadcity.gov.in",
+      "offline_form_url": "https://revenuedepartment.gujarat.gov.in/e-dhara-forms",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": false,
-      "form_fields": ["property_id", "old_name", "new_name", "mobile", "address"]
+      "login_required": true,
+      "direct_access": false,
+      "automation_type": "login_assisted",
+      "form_type": "municipal_portal",
+      "name_change_facility": "Yes (online initiation, ward-level verification)",
+      "address_change_facility": "Yes (online request + physical verification)"
     },
     {
-      "id": "talati",
-      "name": "Talati (Village Officer)",
-      "type": "government",
-      "portal_url": "https://anyror.gujarat.gov.in",
-      "name_change_url": "https://revenuedepartment.gujarat.gov.in/e-dhara-forms",
-      "address_change_url": "https://revenuedepartment.gujarat.gov.in/e-dhara-forms",
-      "api_available": false,
-      "online_available": false,
-      "rpa_enabled": false,
-      "form_fields": ["property_id", "old_name", "new_name", "mobile", "address", "village"]
-    },
-    {
-      "id": "mamlatdar",
-      "name": "Mamlatdar / Tehsildar",
-      "type": "government",
-      "portal_url": "https://revenuedepartment.gujarat.gov.in",
-      "name_change_url": "https://revenuedepartment.gujarat.gov.in/e-dhara-forms",
-      "address_change_url": "https://revenuedepartment.gujarat.gov.in/application-forms",
-      "api_available": false,
-      "online_available": false,
-      "rpa_enabled": false,
-      "form_fields": ["property_id", "old_name", "new_name", "mobile", "address", "taluka"]
-    },
-    {
-      "id": "edhara",
+      "id": "edhara-centers",
       "name": "e-Dhara Centers",
       "type": "government",
       "portal_url": "https://landrecords.gujarat.gov.in",
       "name_change_url": "https://edhara.gujarat.gov.in",
       "address_change_url": "https://edhara.gujarat.gov.in",
+      "offline_form_url": "https://revenuedepartment.gujarat.gov.in/e-dhara-forms",
       "api_available": false,
       "online_available": true,
       "rpa_enabled": false,
-      "form_fields": ["property_id", "old_name", "new_name", "mobile", "address"]
+      "login_required": false,
+      "direct_access": true,
+      "automation_type": "assisted_service",
+      "form_type": "service_center",
+      "name_change_facility": "Yes (assisted service, document submission)",
+      "address_change_facility": "Yes (assisted correction)"
     }
   ]
 }
